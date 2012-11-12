@@ -1,0 +1,14 @@
+plugin.tx_ajadomaps {
+	view {
+		# cat=plugin.tx_ajadomaps/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:ajadomaps/Resources/Private/Templates/
+		# cat=plugin.tx_ajadomaps/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:ajadomaps/Resources/Private/Partials/
+		# cat=plugin.tx_ajadomaps/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:ajadomaps/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_ajadomaps//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}

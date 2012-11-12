@@ -1,0 +1,132 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+
+<f:section name="main">
+
+
+<f:flashMessages />
+<style>
+    .maps{
+           }
+    .pin{
+        position: absolute;
+    }
+    .map{
+        position: relative;
+    }
+    .meta-info{
+        position: absolute;
+        border-left: 1px solid #003a62;
+        padding-bottom: 20px;
+        width: 3px;
+        display: none;
+        z-index: 100;
+    }
+    .meta-info .info{
+        padding: 17px;
+        width: 380px;
+        position: relative;
+    }
+    .meta-info .info .left{
+        float: left;
+        width: 140px;
+    }
+    
+    .tx-ajadomaps table {
+    	border-spacing: 0px;
+    }
+    .tx-ajadomaps table .description{
+    	padding-left: 20px;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        var currentInfo = null;
+        var fadeOutId = null;
+        $('.pin-image').hover(function(){
+	        window.clearTimeout(fadeOutId);
+            $('.meta-info').each(function(){
+               $(this).hide(); 
+            });
+            var metaInfo = $(this).parent().parent().find('.meta-info');
+            var left = $(this).width()/2-2;
+            metaInfo.css({left: left, top: 0-metaInfo.height()-20});
+           
+            metaInfo.fadeIn();
+            currentInfo = metaInfo;
+        }, function(){
+        	var metaInfo = $(this).parent().parent().find('.meta-info');
+            fadeOutId = window.setTimeout(
+	        	function(){
+	        		metaInfo.fadeOut();
+	        	}, 1000);
+        });
+        $('.meta-info').hover(function(){
+        	window.clearTimeout(fadeOutId);
+        },function(){
+        	var metaInfo = $(this);
+        	window.setTimeout(
+        	function(){
+        		metaInfo.fadeOut();
+        	}, 200);
+        });
+    });
+    
+</script>
+
+<div class="maps">
+		<f:for each="{maps}" as="map">
+		    
+	        <div class="map">
+	            <img class="map-image" src="uploads/tx_ajadomaps/{map.image}"/>
+	            <f:for each="{pins}" as="pin">
+	                <div class="pin" style="left: {pin.x}px; top: {pin.y}px;">
+	                    <f:if condition="{pin.link}">
+	                    	<f:then>
+	                    		<f:link.page pageUid="{pin.link}">
+	                    			<img class="pin-image" src="uploads/tx_ajadomaps/<f:if condition="{pin.pinImage}"><f:then>{pin.pinImage}</f:then><f:else>{map.pinImage}</f:else></f:if>" alt="{pin.title}"/>
+	                    		</f:link.page>
+	                    	</f:then>
+	                    	<f:else>
+	                    		<div>
+									<img class="pin-image" src="uploads/tx_ajadomaps/<f:if condition="{pin.pinImage}"><f:then>{pin.pinImage}</f:then><f:else>{map.pinImage}</f:else></f:if>" alt="{pin.title}"/>
+		                   		</div>
+		                    </f:else>
+	                    </f:if>
+	                    
+	                    <div class="meta-info">
+	                        <div class="info">
+	                        	<div class="title">{pin.title}</div>
+	                            <table>
+	                            	<tr>
+	                            		<td>
+	                            			<f:format.html>{pin.address}</f:format.html>
+	                            		</td>
+	                            		<td class="description">
+	                            			<f:format.html>{pin.description}</f:format.html>
+	                            		</td>
+	                            	</tr>
+									
+	                            </table>
+	                           
+	                        </div>
+	                    </div>
+	                </div>
+	            </f:for>
+	        </div>
+		</f:for>
+</div>
+
+</f:section>

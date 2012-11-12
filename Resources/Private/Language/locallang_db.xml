@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'ajadomaps'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_ajadomaps_domain_model_pin">Pin</label>
+			<label index="tx_ajadomaps_domain_model_pin.title">Title</label>
+			<label index="tx_ajadomaps_domain_model_pin.description">Description</label>
+                        <label index="tx_ajadomaps_domain_model_pin.address">Address</label>
+			<label index="tx_ajadomaps_domain_model_pin.x">X</label>
+			<label index="tx_ajadomaps_domain_model_pin.y">Y</label>
+			<label index="tx_ajadomaps_domain_model_pin.pin_image">Pin Image</label>
+			<label index="tx_ajadomaps_domain_model_map">Map</label>
+			<label index="tx_ajadomaps_domain_model_map.image">Image</label>
+			<label index="tx_ajadomaps_domain_model_map.pins">Pins</label>
+			<label index="tx_ajadomaps_domain_model_pin.link">Link</label>
+		</languageKey>
+                <languageKey index="de" type="array">
+			<label index="tx_ajadomaps_domain_model_pin">Pin</label>
+			<label index="tx_ajadomaps_domain_model_pin.title">Titel</label>
+			<label index="tx_ajadomaps_domain_model_pin.description">Beschreibung</label>
+			<label index="tx_ajadomaps_domain_model_pin.address">Adresse</label>
+                        <label index="tx_ajadomaps_domain_model_pin.x">X-Position</label>
+			<label index="tx_ajadomaps_domain_model_pin.y">Y-Position</label>
+			<label index="tx_ajadomaps_domain_model_pin.pin_image">Pin Bild</label>
+			<label index="tx_ajadomaps_domain_model_map">Karte</label>
+			<label index="tx_ajadomaps_domain_model_map.image">Bild</label>
+			<label index="tx_ajadomaps_domain_model_map.pins">Pins</label>
+			<label index="tx_ajadomaps_domain_model_pin.link">Verlinkung</label>
+		</languageKey>
+	</data>
+</T3locallang>

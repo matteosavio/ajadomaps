@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Ajado maps extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_ajadomaps_domain_model_pin">Pin</label>
+			<label index="tx_ajadomaps_domain_model_pin.title">title</label>
+			<label index="tx_ajadomaps_domain_model_pin.description">description</label>
+                        <label index="tx_ajadomaps_domain_model_pin.address">address</label>
+			<label index="tx_ajadomaps_domain_model_pin.x">x</label>
+			<label index="tx_ajadomaps_domain_model_pin.y">y</label>
+			<label index="tx_ajadomaps_domain_model_pin.pin_image">pinImage</label>
+			<label index="tx_ajadomaps_domain_model_map">Map</label>
+			<label index="tx_ajadomaps_domain_model_map.image">The background image of the map</label>
+			<label index="tx_ajadomaps_domain_model_map.pins">one map can have many pins</label>
+		</languageKey>
+	</data>
+</T3locallang>

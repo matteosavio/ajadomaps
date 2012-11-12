@@ -1,0 +1,30 @@
+plugin.tx_ajadomaps {
+	view {
+		templateRootPath = {$plugin.tx_ajadomaps.view.templateRootPath}
+		partialRootPath = {$plugin.tx_ajadomaps.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_ajadomaps.view.layoutRootPath}
+	}
+	persistence {
+		storagePid =
+	}
+}
+
+plugin.tx_ajadomaps._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-ajadomaps table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-ajadomaps table th {
+		font-weight:bold;
+	}
+
+	.tx-ajadomaps table td {
+		vertical-align:top;
+	}
+)
